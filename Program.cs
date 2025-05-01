@@ -24,8 +24,10 @@ namespace TheEndOfMOdule2
             Width = 800;
             StartPosition = FormStartPosition.CenterScreen;
 
-            Button exitButton = CreateButton(new Size(60, 30), new Point(700, 500), "Выход");
+            Button exitButton = CreateButton(new Size(70, 30), new Point(700, 500), "Выход");
             exitButton.Click += (sender, e) => Application.Exit();
+            Button restartButton = CreateButton(new Size(70, 30), new Point(700, 470), "Рестарт");
+            restartButton.Click += (sender, e) => Application.Restart();
             Label label = CreateLabel(new Size(200, 30), new Point(300, 200), "Вы дважды щелкнули по форме");
             label.Visible = false;
             DoubleClick += (sender, e) => ShowLabel(label);
