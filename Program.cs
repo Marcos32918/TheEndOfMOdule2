@@ -30,6 +30,9 @@ namespace TheEndOfMOdule2
             restartButton.Click += (sender, e) => Application.Restart();
             Label label = CreateLabel(new Size(200, 30), new Point(300, 200), "Вы дважды щелкнули по форме");
             label.Visible = false;
+            Label Hiddenlabel = CreateLabel(new Size(300, 100), new Point(300, 400), "Сюда не наступать");
+            Hiddenlabel.Visible = false;
+            Click += (sender, e) => ShowLabel(Hiddenlabel);
             DoubleClick += (sender, e) => ShowLabel(label);
             MouseEnter += (sender, e) => _mouseOnForm = true;
             MouseLeave += (sender, e) => _mouseOnForm = false;
@@ -37,7 +40,8 @@ namespace TheEndOfMOdule2
 
         private void ShowLabel(Label label)
         {
-            if (_mouseOnForm) label.Visible = true; 
+            if (_mouseOnForm) label.Visible = true;
+            else label.Visible = false;
         }
 
         private void SetcommonParameters(Control element, Size size, Point position, string title)
